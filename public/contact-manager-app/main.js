@@ -402,7 +402,7 @@ var AuthenticationService = /** @class */ (function () {
         this.updateAuthStatus.next(authFlag);
     };
     AuthenticationService.prototype.login = function (username, password) {
-        return this.http.post('http://localhost:3000/api/v1/auth', { username: username, password: password }).
+        return this.http.post('/api/v1/auth', { username: username, password: password }).
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthenticationService.prototype.logout = function () {
@@ -583,8 +583,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 //All URL's for server
 var endpoints = {
-    contactList: "http://localhost:3000/api/v1/contactlist",
-    contact: "http://localhost:3000/api/v1/contact"
+    contactList: "/api/v1/contactlist",
+    contact: "/api/v1/contact"
 };
 var ContactinfoService = /** @class */ (function () {
     function ContactinfoService(http) {
