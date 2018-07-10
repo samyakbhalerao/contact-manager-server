@@ -92,7 +92,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".logout-btn{\r\n        padding: 0 14px;  \r\n}\r\n.example-spacer {\r\n    flex: 1 1 auto;\r\n  }"
+module.exports = ".logout-btn{\n        padding: 0 14px;  \n}\n.example-spacer {\n    flex: 1 1 auto;\n  }"
 
 /***/ }),
 
@@ -103,7 +103,7 @@ module.exports = ".logout-btn{\r\n        padding: 0 14px;  \r\n}\r\n.example-sp
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center\">\r\n    \r\n  <mat-toolbar color=\"primary\">\r\n   \r\n   <mat-toolbar-row>\r\n      <span>{{title}} </span>\r\n      <span class=\"example-spacer\"></span>\r\n      <button class=\"logout-btn\" *ngIf=\"loginStatus\" mat-raised-button (click)=\"logout()\" color=\"warn\">Logout</button>\r\n     \r\n    </mat-toolbar-row>\r\n  </mat-toolbar>\r\n  \r\n</div>\r\n\r\n<div>\r\n <router-outlet></router-outlet>\r\n</div>"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n    \n  <mat-toolbar color=\"primary\">\n   \n   <mat-toolbar-row>\n      <span>{{title}} </span>\n      <span class=\"example-spacer\"></span>\n      <button class=\"logout-btn\" *ngIf=\"loginStatus\" mat-raised-button (click)=\"logout()\" color=\"warn\">Logout</button>\n     \n    </mat-toolbar-row>\n  </mat-toolbar>\n  \n</div>\n\n<div>\n <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -402,7 +402,7 @@ var AuthenticationService = /** @class */ (function () {
         this.updateAuthStatus.next(authFlag);
     };
     AuthenticationService.prototype.login = function (username, password) {
-        return this.http.post('http://localhost:3000/api/v1/auth', { username: username, password: password }).
+        return this.http.post('/api/v1/auth', { username: username, password: password }).
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthenticationService.prototype.logout = function () {
@@ -430,11 +430,7 @@ var AuthenticationService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = "div {\n    display: flex;\n  }\n  \n  input {\n    border: none;\n    background: none;\n    padding: 0;\n    outline: none;\n    font: inherit;\n    text-align: center;\n  }\n  \n  span {\n    opacity: 0;\n    transition: opacity 200ms;\n  }\n  \n  :host.floating span {\n    opacity: 1;\n  }\n  \n  table {\n    width: 100%;\n    min-width: 300px;\n  }\n  \n  .econtact-view-container {\n    display: flex;\n    flex-direction: column;\n  }\n  \n  .contact-view-container > * {\n    width: 100%;\n  }\n  \n  @media(max-width: 600px) {\n    .mobile-label {\n      width: 80px;\n      display: inline-block;\n          font-weight: bold;\n    }\n  \n    .mat-header-row {\n      display: none;\n    }\n  \n    .mat-row { \n      flex-direction: column;\n      align-items: start;\n      padding: 8px 24px;\n    }\n  }"
-=======
-module.exports = "div {\r\n    display: flex;\r\n  }\r\n  \r\n  input {\r\n    border: none;\r\n    background: none;\r\n    padding: 0;\r\n    outline: none;\r\n    font: inherit;\r\n    text-align: center;\r\n  }\r\n  \r\n  span {\r\n    opacity: 0;\r\n    transition: opacity 200ms;\r\n  }\r\n  \r\n  :host.floating span {\r\n    opacity: 1;\r\n  }\r\n  \r\n  table {\r\n    width: 100%;\r\n    min-width: 300px;\r\n  }\r\n  \r\n  .econtact-view-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .contact-view-container > * {\r\n    width: 100%;\r\n  }\r\n  \r\n  @media(max-width: 600px) {\r\n    .mobile-label {\r\n      width: 80px;\r\n      display: inline-block;\r\n          font-weight: bold;\r\n    }\r\n  \r\n    .mat-header-row {\r\n      display: none;\r\n    }\r\n  \r\n    .mat-row { \r\n      flex-direction: column;\r\n      align-items: start;\r\n      padding: 8px 24px;\r\n    }\r\n  }"
->>>>>>> 0b9c5b7f6ecbad098798268e529d047fb9b5b4bc
 
 /***/ }),
 
@@ -445,11 +441,7 @@ module.exports = "div {\r\n    display: flex;\r\n  }\r\n  \r\n  input {\r\n    b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = "<div class=\"contact-view-container mat-elevation-z8\">\n  <mat-card>\n\n    <mat-card-title>\n\n    </mat-card-title>\n    <mat-form-field>\n      <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n    </mat-form-field>\n    <mat-card-content>\n      <div class=\"mat-elevation-z8\">\n\n        <table mat-table [dataSource]=\"dataSource\" matSort>\n\n          <!-- ID Column -->\n          <ng-container matColumnDef=\"id\">\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>\n            <td mat-cell *matCellDef=\"let row; let i = index;\">\n                <span class=\"mobile-label\">ID:</span>\n              {{i+1}}\n               </td>\n          </ng-container>\n\n          <!-- Name Column -->\n          <ng-container matColumnDef=\"Name\">\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>\n            <td mat-cell *matCellDef=\"let row\"><span class=\"mobile-label\">Name:</span> {{row.firstName}} </td>\n          </ng-container>\n\n          <!-- Color Column -->\n          <ng-container matColumnDef=\"Email\">\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>\n            <td mat-cell *matCellDef=\"let row\"><span class=\"mobile-label\">Email:</span> {{row.email}} </td>\n          </ng-container>\n\n          <!-- Color Column -->\n          <ng-container matColumnDef=\"Status\">\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>\n            <td mat-cell *matCellDef=\"let row\"><span class=\"mobile-label\">Status:</span> {{row.status}} </td>\n          </ng-container>\n          <!-- Color Column -->\n          <ng-container matColumnDef=\"Contact No\">\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact No. </th>\n            <td mat-cell *matCellDef=\"let row\"><span class=\"mobile-label\">Contact No:</span> {{row.contactNo}} </td>\n          </ng-container>\n\n          <ng-container matColumnDef=\"Action\">\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>\n            <td mat-cell *matCellDef=\"let row;  \">\n                <span class=\"mobile-label\">Action</span>\n              <button mat-raised-button (click)=\"removeContact(row._id['$oid'])\">Delete </button>\n              <button mat-raised-button (click)=\"updateContact(row._id['$oid'])\">Edit </button>\n            </td>\n          </ng-container>\n\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\">\n          </tr>\n        </table>\n      </div>\n    </mat-card-content>\n    <mat-card-actions>\n      <mat-paginator [pageSizeOptions]=\"[ 10, 25, 100]\"></mat-paginator>\n    </mat-card-actions>\n  </mat-card>\n</div>"
-=======
-module.exports = "<div class=\"contact-view-container mat-elevation-z8\">\r\n  <mat-card>\r\n\r\n    <mat-card-title>\r\n\r\n    </mat-card-title>\r\n    <mat-form-field>\r\n      <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n    </mat-form-field>\r\n    <mat-card-content>\r\n      <div class=\"mat-elevation-z8\">\r\n\r\n        <table mat-table [dataSource]=\"dataSource\" matSort>\r\n\r\n          <!-- ID Column -->\r\n          <ng-container matColumnDef=\"id\">\r\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>\r\n            <td mat-cell *matCellDef=\"let row; let i = index;\">\r\n                <span class=\"mobile-label\">ID:</span>\r\n              {{i+1}}\r\n               </td>\r\n          </ng-container>\r\n\r\n          <!-- Name Column -->\r\n          <ng-container matColumnDef=\"Name\">\r\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>\r\n            <td mat-cell *matCellDef=\"let row\"><span class=\"mobile-label\">Name:</span> {{row.firstName}} </td>\r\n          </ng-container>\r\n\r\n          <!-- Color Column -->\r\n          <ng-container matColumnDef=\"Email\">\r\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>\r\n            <td mat-cell *matCellDef=\"let row\"><span class=\"mobile-label\">Email:</span> {{row.email}} </td>\r\n          </ng-container>\r\n\r\n          <!-- Color Column -->\r\n          <ng-container matColumnDef=\"Status\">\r\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>\r\n            <td mat-cell *matCellDef=\"let row\"><span class=\"mobile-label\">Status:</span> {{row.status}} </td>\r\n          </ng-container>\r\n          <!-- Color Column -->\r\n          <ng-container matColumnDef=\"Contact No\">\r\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact No. </th>\r\n            <td mat-cell *matCellDef=\"let row\"><span class=\"mobile-label\">Contact No:</span> {{row.contactNo}} </td>\r\n          </ng-container>\r\n\r\n          <ng-container matColumnDef=\"Action\">\r\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>\r\n            <td mat-cell *matCellDef=\"let row;  \">\r\n                <span class=\"mobile-label\">Action</span>\r\n              <button mat-raised-button (click)=\"removeContact(row._id['$oid'])\">Delete </button>\r\n              <button mat-raised-button (click)=\"updateContact(row._id['$oid'])\">Edit </button>\r\n            </td>\r\n          </ng-container>\r\n\r\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\">\r\n          </tr>\r\n        </table>\r\n      </div>\r\n    </mat-card-content>\r\n    <mat-card-actions>\r\n      <mat-paginator [pageSizeOptions]=\"[ 10, 25, 100]\"></mat-paginator>\r\n    </mat-card-actions>\r\n  </mat-card>\r\n</div>"
->>>>>>> 0b9c5b7f6ecbad098798268e529d047fb9b5b4bc
 
 /***/ }),
 
@@ -591,8 +583,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 //All URL's for server
 var endpoints = {
-    contactList: "http://localhost:3000/api/v1/contactlist",
-    contact: "http://localhost:3000/api/v1/contact"
+    contactList: "/api/v1/contactlist",
+    contact: "/api/v1/contact"
 };
 var ContactinfoService = /** @class */ (function () {
     function ContactinfoService(http) {
@@ -626,9 +618,6 @@ var ContactinfoService = /** @class */ (function () {
     ContactinfoService.prototype.deleteContact = function (id) {
         console.log("id", id);
         return this.http.delete(endpoints.contact + ("/" + id), this.options);
-        //.pipe(
-        //  map((res:Response)=>res.json()),
-        // );
     };
     //Get Contact by id
     ContactinfoService.prototype.getContactById = function (id) {
@@ -673,7 +662,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dashboard-container col-md-1\">\r\n    \r\n  <mat-tab-group color=\"primary\" backgroundColor=\"accent\">\r\n        <mat-tab label=\"Contact List\" >\r\n          <ng-template matTabContent>\r\n            <app-contact-view></app-contact-view>\r\n          </ng-template>\r\n        </mat-tab>\r\n        <mat-tab label=\"Add Contact\">\r\n          <ng-template matTabContent>            \r\n            <app-newcontact></app-newcontact>\r\n          </ng-template>\r\n        </mat-tab>\r\n      </mat-tab-group>\r\n\r\n</div>"
+module.exports = "<div class=\"dashboard-container col-md-1\">\n    \n  <mat-tab-group color=\"primary\" backgroundColor=\"accent\">\n        <mat-tab label=\"Contact List\" >\n          <ng-template matTabContent>\n            <app-contact-view></app-contact-view>\n          </ng-template>\n        </mat-tab>\n        <mat-tab label=\"Add Contact\">\n          <ng-template matTabContent>            \n            <app-newcontact></app-newcontact>\n          </ng-template>\n        </mat-tab>\n      </mat-tab-group>\n\n</div>"
 
 /***/ }),
 
@@ -856,11 +845,7 @@ var EditContactDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = "\n.container-login {\n    display: flex;\n    flex-direction: column;\n  }\n  \n  .container-login > * {\n    width: 100%;\n  }\n  \n  mat-card-content{\n    padding: 5%;\n  }\n  \n  mat-form-field{\n    padding: 2%;\n  }\n  \n  form{\n    margin: 0% 15% 0% 15%;\n  }\n  \n  .container-login{\n    padding: 0%;\n    margin: 0 10% 0 0%;\n   }\n  \n  @media(min-width: 600px) {\n    .container-login{\n      padding: 0%;\n      margin: 0 15% 0 15%;\n     }\n  }\n  \n  @media(max-width: 300px) {\n    .container-login{\n      padding: 0%;\n      margin: 0 15% 0 15%;\n     }\n  }"
-=======
-module.exports = "\r\n.container-login {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .container-login > * {\r\n    width: 100%;\r\n  }\r\n  \r\n  mat-card-content{\r\n    padding: 5%;\r\n  }\r\n  \r\n  mat-form-field{\r\n    padding: 2%;\r\n  }\r\n  \r\n  form{\r\n    margin: 0% 15% 0% 15%;\r\n  }\r\n  \r\n  .container-login{\r\n    padding: 0%;\r\n    margin: 0 10% 0 0%;\r\n   }\r\n  \r\n  @media(min-width: 600px) {\r\n    .container-login{\r\n      padding: 0%;\r\n      margin: 0 15% 0 15%;\r\n     }\r\n  }\r\n  \r\n  @media(max-width: 300px) {\r\n    .container-login{\r\n      padding: 0%;\r\n      margin: 0 15% 0 15%;\r\n     }\r\n  }"
->>>>>>> 0b9c5b7f6ecbad098798268e529d047fb9b5b4bc
 
 /***/ }),
 
@@ -871,11 +856,7 @@ module.exports = "\r\n.container-login {\r\n    display: flex;\r\n    flex-direc
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = "<div class=\"container-login \">\n    <mat-card>\n        <mat-card-title >\n          <h4>Sign In</h4>\n        </mat-card-title>\n        <mat-card-content class=\"mat-elevation-z8\">\n      <form [formGroup]=\"loginForm\" >\n      <mat-form-field>\n          <input matInput placeholder=\"Username\" type=\"text\" class=\"example-right-align\" formControlName=\"username\">\n        </mat-form-field>\n        <mat-form-field>\n          <input matInput placeholder=\"Enter your password\" [type]=\"password\" formControlName=\"password\">    </mat-form-field>\n        <div mat-dialog-actions>\n          <button mat-raised-button  (click)=\"authenticate(loginForm.value)\" [disabled]=\"!loginForm.valid\">Login</button>\n        </div>\n        </form>\n      </mat-card-content>\n      </mat-card>\n</div>"
-=======
-module.exports = "<div class=\"container-login \">\r\n    <mat-card>\r\n        <mat-card-title >\r\n          <h4>Sign In</h4>\r\n        </mat-card-title>\r\n        <mat-card-content class=\"mat-elevation-z8\">\r\n      <form [formGroup]=\"loginForm\" >\r\n      <mat-form-field>\r\n          <input matInput placeholder=\"Username\" type=\"text\" class=\"example-right-align\" formControlName=\"username\">\r\n        </mat-form-field>\r\n        <mat-form-field>\r\n          <input matInput placeholder=\"Enter your password\" [type]=\"password\" formControlName=\"password\">    </mat-form-field>\r\n        <div mat-dialog-actions>\r\n          <button mat-raised-button  (click)=\"authenticate(loginForm.value)\" [disabled]=\"!loginForm.valid\">Login</button>\r\n        </div>\r\n        </form>\r\n      </mat-card-content>\r\n      </mat-card>\r\n</div>"
->>>>>>> 0b9c5b7f6ecbad098798268e529d047fb9b5b4bc
 
 /***/ }),
 
@@ -1007,11 +988,7 @@ var EmployeeContactData = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = ".example-container {\n    display: table;\n    flex-direction: column;\n  }\n  \n  .example-container > * {\n    width: 100%;\n  }\n  \n  mat-form-field{\n    padding: 2%;\n  }\n  \n  @media(min-width: 600px) {\n    .new-contact-container{\n      padding: 5% 20% 0 16%;\n     }\n  }\n "
-=======
-module.exports = ".example-container {\r\n    display: table;\r\n    flex-direction: column;\r\n  }\r\n  \r\n  .example-container > * {\r\n    width: 100%;\r\n  }\r\n  \r\n  mat-form-field{\r\n    padding: 2%;\r\n  }\r\n  \r\n  @media(min-width: 600px) {\r\n    .new-contact-container{\r\n      padding: 5% 20% 0 16%;\r\n     }\r\n  }\r\n "
->>>>>>> 0b9c5b7f6ecbad098798268e529d047fb9b5b4bc
 
 /***/ }),
 
@@ -1022,11 +999,7 @@ module.exports = ".example-container {\r\n    display: table;\r\n    flex-direct
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = "<div class=\"new-contact-container\">\n  <mat-card>\n    <mat-card-title>\n      Create New Contact\n    </mat-card-title>\n    <mat-card-content >\n      <div class=\"example-container\">\n        <form [formGroup]=\"contactDetailsForm\">\n          <mat-form-field>\n            <input matInput placeholder=\"First Name\" formControlName=\"firstName\" >\n          </mat-form-field>\n\n          <mat-form-field>\n            <input matInput placeholder=\"Last Name\" formControlName=\"lastName\">\n          </mat-form-field>\n          <mat-form-field>\n            <input matInput placeholder=\"Email\" formControlName=\"email\">\n          </mat-form-field>\n\n          <mat-form-field>\n            <input matInput placeholder=\"Contact No\" formControlName=\"contactNo\">\n          </mat-form-field>\n\n          <mat-form-field>\n            <input matInput placeholder=\"Department\" formControlName=\"department\">\n          </mat-form-field>\n          <mat-form-field>\n          <mat-select placeholder=\"Select\" formControlName=\"status\">\n            <mat-option value=\"active\">Active</mat-option>\n            <mat-option value=\"inactive\">Inactive</mat-option>\n          </mat-select>\n          </mat-form-field>\n          </form>\n      </div>\n    </mat-card-content>\n    <mat-card-actions>\n      <button mat-raised-button (click)=\"contactDetailsForm.reset()\">\n        Clear\n      </button>\n      <button mat-raised-button (click)=\"addContact(contactDetailsForm.value)\" [disabled]=\"!contactDetailsForm.valid\">\n        Save\n      </button>\n    </mat-card-actions>\n    <mat-card-footer>\n      Contact Added Successfully\n    </mat-card-footer>\n  </mat-card>\n</div>"
-=======
-module.exports = "<div class=\"new-contact-container\">\r\n  <mat-card>\r\n    <mat-card-title>\r\n      Create New Contact\r\n    </mat-card-title>\r\n    <mat-card-content >\r\n      <div class=\"example-container\">\r\n        <form [formGroup]=\"contactDetailsForm\">\r\n          <mat-form-field>\r\n            <input matInput placeholder=\"First Name\" formControlName=\"firstName\" >\r\n          </mat-form-field>\r\n\r\n          <mat-form-field>\r\n            <input matInput placeholder=\"Last Name\" formControlName=\"lastName\">\r\n          </mat-form-field>\r\n          <mat-form-field>\r\n            <input matInput placeholder=\"Email\" formControlName=\"email\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field>\r\n            <input matInput placeholder=\"Contact No\" formControlName=\"contactNo\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field>\r\n            <input matInput placeholder=\"Department\" formControlName=\"department\">\r\n          </mat-form-field>\r\n          <mat-form-field>\r\n          <mat-select placeholder=\"Select\" formControlName=\"status\">\r\n            <mat-option value=\"active\">Active</mat-option>\r\n            <mat-option value=\"inactive\">Inactive</mat-option>\r\n          </mat-select>\r\n          </mat-form-field>\r\n          </form>\r\n      </div>\r\n    </mat-card-content>\r\n    <mat-card-actions>\r\n      <button mat-raised-button (click)=\"contactDetailsForm.reset()\">\r\n        Clear\r\n      </button>\r\n      <button mat-raised-button (click)=\"addContact(contactDetailsForm.value)\" [disabled]=\"!contactDetailsForm.valid\">\r\n        Save\r\n      </button>\r\n    </mat-card-actions>\r\n    <mat-card-footer>\r\n      Contact Added Successfully\r\n    </mat-card-footer>\r\n  </mat-card>\r\n</div>"
->>>>>>> 0b9c5b7f6ecbad098798268e529d047fb9b5b4bc
 
 /***/ }),
 
@@ -1162,7 +1135,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Samyak_Coding\contact-manager\contact-manager-app\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/admin/personal files /contact-manager/contact-manager-app/src/main.ts */"./src/main.ts");
 
 
 /***/ })
